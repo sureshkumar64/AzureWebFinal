@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Azure Workshop Design System - Modern Cloud Tech Theme */
+
+@layer base {
+  :root {
+    /* Azure-inspired color palette */
+    --background: 220 25% 3%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 25% 5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 25% 5%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Azure Blue - Primary Brand Color */
+    --primary: 207 100% 50%;
+    --primary-foreground: 220 25% 3%;
+    --primary-glow: 207 100% 65%;
+
+    /* Tech Purple - Secondary */
+    --secondary: 270 95% 75%;
+    --secondary-foreground: 220 25% 3%;
+
+    /* Accent - Cyan for highlights */
+    --accent: 180 100% 70%;
+    --accent-foreground: 220 25% 3%;
+
+    --muted: 220 25% 8%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 25% 12%;
+    --input: 220 25% 12%;
+    --ring: 207 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-azure: linear-gradient(135deg, hsl(207 100% 50%), hsl(270 95% 75%));
+    --gradient-tech: linear-gradient(45deg, hsl(207 100% 50%), hsl(180 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 3%) 0%, hsl(207 100% 15%) 50%, hsl(270 95% 25%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 5% / 0.8), hsl(207 100% 10% / 0.9));
+    
+    /* Glassmorphism effects */
+    --glass-bg: hsl(220 25% 5% / 0.1);
+    --glass-border: hsl(210 40% 98% / 0.1);
+    
+    /* Shadows with Azure glow */
+    --shadow-azure: 0 0 50px hsl(207 100% 50% / 0.3);
+    --shadow-card: 0 10px 30px hsl(220 25% 3% / 0.5);
+    --shadow-glow: 0 0 30px hsl(207 100% 65% / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    /* Already optimized for dark theme */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass card effect */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Azure gradient text */
+  .gradient-text {
+    background: var(--gradient-azure);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Animated background */
+  .animated-bg {
+    background: var(--gradient-hero);
+    background-size: 400% 400%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-smooth);
+  }
+
+  .glow:hover {
+    box-shadow: var(--shadow-azure);
+    transform: translateY(-2px);
+  }
+
+  /* Scroll reveal animation */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  /* Custom keyframes */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Animation classes */
+  .animate-gradient-shift {
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.4s ease-out;
+  }
+}
