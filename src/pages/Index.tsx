@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/HeroSection';
 import { SessionsSection } from '@/components/SessionsSection';
 import { SponsorsSection } from '@/components/SponsorsSection';
 import { RegistrationSection } from '@/components/RegistrationSection';
+import { FAQ } from '@/components/FAQ';
 import { Footer } from '@/components/Footer';
 
 const Index = () => {
@@ -46,6 +47,11 @@ const Index = () => {
       {/* Registration Section */}
       <div id="register" className="scroll-reveal">
         <RegistrationSection />
+      </div>
+      
+      {/* FAQ Section */}
+      <div id="faq" className="scroll-reveal">
+        <FAQ />
       </div>
 
       {/* Footer */}

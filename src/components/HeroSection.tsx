@@ -46,7 +46,7 @@ export const HeroSection = () => {
 
           {/* Main Title */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="gradient-text">Azure Workshop</span>
+            <span className="gradient-text">AzureXplore</span>
             <br />
             <span className="text-4xl sm:text-5xl lg:text-6xl text-foreground/90">2025</span>
           </h1>
