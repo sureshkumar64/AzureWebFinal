@@ -3,14 +3,24 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What is the Azure Workshop about?",
+    question: "What is AzureXplore about?",
     answer:
-      "The Azure Workshop is an interactive session designed to introduce students to cloud computing and Microsoft Azure services."
+      "AzureXplore is an interactive workshop designed to introduce students to cloud computing and Microsoft Azure services."
   },
   {
     question: "Do I need prior knowledge of Azure?",
     answer:
       "No prior experience is required! The workshop is beginner-friendly and tailored for students from all backgrounds."
+  },
+  {
+    question: "Will there be any hands-on workshops?",
+    answer:
+      "Yes, there will be workshops where participants can engage in hands-on learning with Azure Services."
+  },
+  {
+    question: "What should I bring to the event?",
+    answer:
+      "Bring your registration confirmation, a valid photo ID, and a laptop if you are having one(we will be providing PC too."
   },
   {
     question: "Will I receive a certificate?",

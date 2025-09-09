@@ -11,7 +11,7 @@ const tierStyles = {
 };
 
 const tierLabels = {
-  title: "Title Sponsors",
+  title: "Title Sponsor",
 };
 
 export const SponsorsSection = () => {

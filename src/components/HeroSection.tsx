@@ -12,13 +12,13 @@ export const HeroSection = () => {
   }, []);
 
   const handleRegisterClick = () => {
-    window.open('https://unstop.com', '_blank');
+    window.open('https://unstop.com/p/azure-xplore-2k25-wce-mlscmicrosoft-learn-students-club-1554683#tab-discussion', '_blank');
   };
 
   return (
     <section className="relative min-h-[80vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat animated-bg"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
@@ -40,21 +40,24 @@ export const HeroSection = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full glass-card mb-8 animate-pulse-glow">
+          {/* <div className="inline-flex items-center px-4 py-2 rounded-full glass-card mb-8 animate-pulse-glow">
             <span className="text-sm font-medium gradient-text">Cloud Excellence Awaits</span>
+          </div>gradient */}
+          <div className="inline-flex items-center px-4 py-2 rounded-full glass-card mb-8 animate-pulse-glow">
+            <span className="text-sm font-medium bg-gradient-to-r from-blue-700 via-purple-700 to-blue-700 text-transparent bg-clip-text glow-text">
+              Cloud Excellence Awaits
+            </span>
           </div>
+
 
           {/* Main Title */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="gradient-text">AzureXplore</span>
+            <span className="gradient-text glow-text">AzureXplore</span>
             <br />
-            <span className="text-4xl sm:text-5xl lg:text-6xl text-foreground/90">2025</span>
+            <span className="text-4xl sm:text-5xl lg:text-6xl text-foreground/90">2K25</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-12 max-w-3xl mx-auto font-light">
-            Empowering the Cloud Generation
-          </p>
 
           {/* Description
           <p className="text-lg text-muted-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">

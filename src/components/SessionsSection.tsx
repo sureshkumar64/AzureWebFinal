@@ -2,14 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, User } from 'lucide-react';
+import ScrollRevealWrapper from './ScrollRevealWrapper';
 // Fallback placeholders since assets are missing
 
 
 const sessions = [
   {
     id: 1,
-    title: "Session 1: Before Cloud was Cool ",
-    description: "This session introduces you to the basics of Cloud Computing and Microsoft Azure—what it is, why it matters, and how it changed everything. Learn about data centers, scalability, cloud models (IaaS, PaaS, SaaS), deployment types, and why Azure stands out against AWS and GCP. We’ll also walk you through the Azure Portal and its key services like Virtual Machines, Storage, Networking, and App Services.",
+    title: "Session 1: Head in the Cloud ",
+    description: "This session introduces Cloud Computing and Microsoft Azure, explaining its importance and impact. It covers data centers, scalability, cloud models (IaaS, PaaS, SaaS), deployment types, comparisons with AWS and GCP, and an overview of the Azure Portal with key services like Virtual Machines, Storage, Networking, and App Services.",
     date: "September 27, 2025",
     time: "10:00 AM - 1:00 PM",
     color: "from-primary to-primary/60"
@@ -17,7 +18,7 @@ const sessions = [
   {
     id: 2,
     title: "Session 2: Inside the Azure Engine",
-    description: "This session dives into the heart of Azure: Compute, Storage, and Networking. You’ll understand how Virtual Machines, serverless functions, Blob Storage, and Virtual Networks actually power businesses. We’ll also cover Azure Resource Manager (ARM)—the brain that manages everything in Azure. Plus, you’ll see a live demo of deploying a Resource Group + Storage using the Portal.",
+    description: "This session explores Azure’s core: Compute, Storage, and Networking. Learn how Virtual Machines, serverless functions, Blob Storage, and Virtual Networks power businesses, understand Azure Resource Manager, and watch a live demo deploying a Resource Group and Storage through the Portal.",
     date: "September 27, 2025", 
     time: "2:00 PM - 5:00 PM",
     color: "from-secondary to-secondary/60"
@@ -33,9 +34,9 @@ const sessions = [
   {
     id: 4,
     title: "Session 4: Hack4Azure: Innovate to Elevate",
-    description: "In the final session, you’ll participate in Hack4Azure, an exciting hackathon where you’ll put your Azure skills to the test. This is all about teamwork, creativity, and innovation—building real-world solutions powered by the cloud. Compete, learn, and showcase your ideas as you bring them to life with Azure.",
-    date: "September 28, 2025", 
+    description: "The final session of AzureXplore brings the thrill of a hackathon with a unique twist.Participants will face fast-paced challenges designed to test their Azure skills in real time.Every round will push them further, and only the best will advance.At the end, the top three will emerge as the true Hack4Azure champions.",
     time: "2:00 PM - 5:00 PM",
+    date: "September 28, 2025",
     color: "from-primary to-accent"
   }
 ];
@@ -70,27 +71,24 @@ export const SessionsSection = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-2 text-sm border-primary/30 text-primary">
-            Workshop Sessions
-          </Badge>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Four comprehensive sessions designed to take your Azure expertise to the next level
-          </p>
-        </div>
+        <ScrollRevealWrapper animation="slide-up">
+          <div className="text-center mb-10 sm:mb-14 lg:mb-16">
+            <Badge variant="outline" className="mb-4 px-4 py-2 text-sm border-primary/30 text-primary">
+              Workshop Sessions
+            </Badge>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Four comprehensive sessions designed to take your Azure expertise to the next level
+            </p>
+          </div>
+        </ScrollRevealWrapper>
 
         {/* Sessions Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {sessions.map((session, index) => (
-            <div
+            <ScrollRevealWrapper
               key={session.id}
-              data-session={index}
-              className={`transform transition-all duration-700 ${
-                visibleSessions.includes(index) 
-                  ? 'translate-y-0 opacity-100' 
-                  : 'translate-y-8 opacity-0'
-              }`}
-              style={{ transitionDelay: `${index * 200}ms` }}
+              animation={index % 3 === 0 ? 'slide-up' : index % 3 === 1 ? 'slide-left' : 'slide-right'}
+              stagger={index + 1}
             >
               <Card className="group h-full glass-card hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
                 <div className={`h-2 bg-gradient-to-r ${session.color}`} />
@@ -141,7 +139,7 @@ export const SessionsSection = () => {
                   </div> */}
                 </CardContent>
               </Card>
-            </div>
+            </ScrollRevealWrapper>
           ))}
         </div>
       </div>

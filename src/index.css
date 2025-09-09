@@ -123,16 +123,114 @@
     transform: translateY(-2px);
   }
 
-  /* Scroll reveal animation */
+  /* Enhanced Scroll reveal animations - Bidirectional */
   .scroll-reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .scroll-reveal.revealed {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Slide up from bottom */
+  .reveal-slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-slide-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Slide in from left */
+  .reveal-slide-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-slide-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Slide in from right */
+  .reveal-slide-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-slide-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Scale and fade in */
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .reveal-scale.revealed {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Bounce in effect */
+  .reveal-bounce {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    transition: all 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .reveal-bounce.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Rotate and fade in */
+  .reveal-rotate {
+    opacity: 0;
+    transform: rotate(-10deg) translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-rotate.revealed {
+    opacity: 1;
+    transform: rotate(0deg) translateY(0);
+  }
+
+  /* Staggered reveal for multiple elements */
+  .reveal-stagger-1 { transition-delay: 0.1s; }
+  .reveal-stagger-2 { transition-delay: 0.2s; }
+  .reveal-stagger-3 { transition-delay: 0.3s; }
+  .reveal-stagger-4 { transition-delay: 0.4s; }
+  .reveal-stagger-5 { transition-delay: 0.5s; }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .reveal-slide-up {
+      transform: translateY(20px);
+    }
+    
+    .reveal-slide-left {
+      transform: translateX(-20px);
+    }
+    
+    .reveal-slide-right {
+      transform: translateX(20px);
+    }
+    
+    .reveal-bounce {
+      transform: translateY(30px) scale(0.9);
+    }
   }
 }
 
@@ -189,6 +287,124 @@
     }
   }
 
+  /* Welcome Screen Loader Animations */
+  @keyframes azure-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes azure-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes azure-bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes azure-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(207 100% 50% / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(207 100% 50% / 0.8), 0 0 60px hsl(270 95% 75% / 0.4);
+    }
+  }
+
+  @keyframes azure-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes azure-slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Cool Loader Animations */
+  @keyframes azure-ring-pulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+  }
+
+  @keyframes azure-rotate-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes azure-rotate-fast {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @keyframes azure-particles {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-20px) scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes azure-wave {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(1.5);
+    }
+  }
+
   /* Animation classes */
   .animate-gradient-shift {
     animation: gradient-shift 8s ease infinite;
@@ -209,4 +425,241 @@
   .animate-scale-in {
     animation: scale-in 0.4s ease-out;
   }
+
+  /* Welcome Screen Animation Classes */
+  .animate-azure-pulse {
+    animation: azure-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-azure-spin {
+    animation: azure-spin 1s linear infinite;
+  }
+
+  .animate-azure-bounce {
+    animation: azure-bounce 1.5s ease-in-out infinite;
+  }
+
+  .animate-azure-glow {
+    animation: azure-glow 2s ease-in-out infinite;
+  }
+
+  .animate-azure-fade-in {
+    animation: azure-fade-in 1s ease-out;
+  }
+
+  .animate-azure-slide-up {
+    animation: azure-slide-up 1s ease-out;
+  }
+
+  /* Cool Loader Animation Classes */
+  .animate-azure-ring-pulse {
+    animation: azure-ring-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-azure-rotate-slow {
+    animation: azure-rotate-slow 3s linear infinite;
+  }
+
+  .animate-azure-rotate-fast {
+    animation: azure-rotate-fast 1s linear infinite;
+  }
+
+  .animate-azure-particles {
+    animation: azure-particles 2s ease-in-out infinite;
+  }
+
+  .animate-azure-wave {
+    animation: azure-wave 1.5s ease-in-out infinite;
+  }
+
+  /* Welcome Screen Styles */
+  .welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  }
+
+  .welcome-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .azure-loader {
+    width: 80px;
+    height: 80px;
+    border: 4px solid hsl(220 25% 20%);
+    border-top: 4px solid hsl(207 100% 50%);
+    border-radius: 50%;
+    animation: azure-spin 1s linear infinite;
+    margin-bottom: 2rem;
+  }
+
+  /* Cool Multi-Ring Loader */
+  .cool-loader {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 2rem auto;
+  }
+
+  .cool-loader-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+
+  .cool-loader-ring-1 {
+    width: 120px;
+    height: 120px;
+    border-top: 3px solid hsl(207 100% 50%);
+    border-right: 3px solid hsl(207 100% 50%);
+    animation: azure-rotate-slow 3s linear infinite;
+  }
+
+  .cool-loader-ring-2 {
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    left: 10px;
+    border-bottom: 3px solid hsl(270 95% 75%);
+    border-left: 3px solid hsl(270 95% 75%);
+    animation: azure-rotate-fast 1.5s linear infinite;
+  }
+
+  .cool-loader-ring-3 {
+    width: 80px;
+    height: 80px;
+    top: 20px;
+    left: 20px;
+    border-top: 2px solid hsl(180 100% 70%);
+    border-right: 2px solid hsl(180 100% 70%);
+    animation: azure-rotate-slow 2s linear infinite reverse;
+  }
+
+  .cool-loader-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, hsl(207 100% 50%), hsl(270 95% 75%));
+    border-radius: 50%;
+    animation: azure-ring-pulse 2s ease-in-out infinite;
+  }
+
+  /* Particle Loader */
+  .particle-loader {
+    display: flex;
+    gap: 8px;
+    margin: 2rem auto;
+  }
+
+  .particle {
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(45deg, hsl(207 100% 50%), hsl(270 95% 75%));
+    border-radius: 50%;
+    animation: azure-particles 2s ease-in-out infinite;
+  }
+
+  .particle:nth-child(1) { animation-delay: 0s; }
+  .particle:nth-child(2) { animation-delay: 0.2s; }
+  .particle:nth-child(3) { animation-delay: 0.4s; }
+  .particle:nth-child(4) { animation-delay: 0.6s; }
+  .particle:nth-child(5) { animation-delay: 0.8s; }
+
+  /* Wave Loader */
+  .wave-loader {
+    display: flex;
+    gap: 4px;
+    margin: 2rem auto;
+    align-items: end;
+  }
+
+  .wave-bar {
+    width: 6px;
+    background: linear-gradient(to top, hsl(207 100% 50%), hsl(270 95% 75%));
+    border-radius: 3px;
+    animation: azure-wave 1.5s ease-in-out infinite;
+  }
+
+  .wave-bar:nth-child(1) { height: 20px; animation-delay: 0s; }
+  .wave-bar:nth-child(2) { height: 30px; animation-delay: 0.1s; }
+  .wave-bar:nth-child(3) { height: 40px; animation-delay: 0.2s; }
+  .wave-bar:nth-child(4) { height: 30px; animation-delay: 0.3s; }
+  .wave-bar:nth-child(5) { height: 20px; animation-delay: 0.4s; }
+
+  .azure-loader-dots {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .azure-dot {
+    width: 12px;
+    height: 12px;
+    background: hsl(207 100% 50%);
+    border-radius: 50%;
+    animation: azure-bounce 1.5s ease-in-out infinite;
+  }
+
+  .azure-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .azure-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  .welcome-title {
+    font-size: 3rem;
+    font-weight: bold;
+    background: var(--gradient-azure);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px hsl(207 100% 50% / 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .welcome-subtitle {
+    font-size: 1.2rem;
+    color: hsl(210 40% 80%);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .welcome-title {
+      font-size: 2rem;
+    }
+    
+    .welcome-subtitle {
+      font-size: 1rem;
+    }
+    
+    .azure-loader {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .glow-text {
+  text-shadow: 
+    0 0 1px rgb(59, 130, 246),      /* Blue */
+    0 0 1px rgb(37, 99, 235),      /* Dark Blue */
+    0 0 1px rgb(147, 51, 234),     /* Purple */
+    0 0 20px rgb(0, 0, 0),     /* Blue outer glow */
+    0 0 30px rgb(0, 0, 0);     /* Purple outer glow */
+}
+
 }

@@ -33,7 +33,7 @@ export const Footer = () => {
 </div> 
 
 <div>    {/* Connect Section */}
-<div>
+<div>     
             <h4 className="font-semibold text-lg mb-6">Connect With Us</h4>
             
             {/* Social Links */}
@@ -51,8 +51,12 @@ export const Footer = () => {
             </div>
           </div>  
  <div className="space-y-2">
+ <div className="flex items-center gap-2 text-sm text-muted-foreground transition-colors group">
+   <Mail className="w-3 h-3" />
+   mlsc@walchandsangli.ac.in
+ </div>
               <a 
-                href="https://unstop.com" 
+                href="https://unstop.com/p/azure-xplore-2k25-wce-mlscmicrosoft-learn-students-club-1554683#tab-discussion" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
@@ -72,7 +76,6 @@ export const Footer = () => {
             </div>
             </div>
             </div>
-           
         {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-border/30">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">

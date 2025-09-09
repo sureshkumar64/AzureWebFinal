@@ -60,7 +60,7 @@ export const RegistrationSection = () => {
 
   const handleRegister = () => {
     // Open Unstop registration page
-    window.open('https://unstop.com', '_blank');
+    window.open('https://unstop.com/p/azure-xplore-2k25-wce-mlscmicrosoft-learn-students-club-1554683#tab-discussion', '_blank');
     
     // Trigger auto-email (in a real app, this would be an API call)
     console.log('Auto-email triggered for Azure Workshop 2025 registration');
@@ -135,7 +135,7 @@ export const RegistrationSection = () => {
                 <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                   <div className="flex items-center justify-between py-2 border-b border-muted/20 text-sm sm:text-base">
                     <span className="text-muted-foreground">Event Dates</span>
-                    <span className="font-semibold">Sept 27-28, 2025</span>
+                    <span className="font-semibold"> 27-28 September 2025</span>
                   </div>
                   <div className="flex items-center justify-between py-2 border-b border-muted/20 text-sm sm:text-base">
                     <span className="text-muted-foreground">Duration</span>
