@@ -16,7 +16,7 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[80vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[80vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Animated Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat animated-bg"
@@ -39,6 +39,15 @@ export const HeroSection = () => {
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          {/* MLSC Logo with Floating Animation */}
+          <div className="flex justify-center mb-4 -mt-8">
+            <img 
+              src="/mlsclogo.png" 
+              alt="MLSC Logo" 
+              className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 animate-float logo-glow"
+            />
+          </div>
+
           {/* Badge */}
           {/* <div className="inline-flex items-center px-4 py-2 rounded-full glass-card mb-8 animate-pulse-glow">
             <span className="text-sm font-medium gradient-text">Cloud Excellence Awaits</span>

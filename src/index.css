@@ -80,6 +80,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed navbar */
   }
 }
 
@@ -661,5 +662,13 @@
     0 0 20px rgb(0, 0, 0),     /* Blue outer glow */
     0 0 30px rgb(0, 0, 0);     /* Purple outer glow */
 }
+
+  /* Logo glow effect */
+  .logo-glow {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)) 
+            drop-shadow(0 0 10px rgba(255, 255, 255, 0.7)) 
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.7)) 
+            drop-shadow(0 0 20px rgba(255, 255, 255, 0.7));
+  }
 
 }

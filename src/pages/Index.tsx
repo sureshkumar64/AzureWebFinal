@@ -5,6 +5,7 @@ import { SponsorsSection } from '@/components/SponsorsSection';
 import { RegistrationSection } from '@/components/RegistrationSection';
 import { FAQ } from '@/components/FAQ';
 import { Footer } from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 const Index = () => {
   useEffect(() => {
@@ -29,6 +30,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Navbar */}
+      <Navbar />
+      
       {/* Hero Section */}
       <div id="home">
         <HeroSection />
